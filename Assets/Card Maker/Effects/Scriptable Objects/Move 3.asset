@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffff6f6050335804092187a235f61005, type: 3}
-  m_Name: Poison Breath
-  m_EditorClassIdentifier: Assembly-CSharp::PoisonEffect
-  value: 0
-  targetType: 0
-  maxNumberOfTargets: 0
-  effectText: 
+  m_Script: {fileID: 11500000, guid: 0195caa1d61c8d847ab24d1a44a5a03e, type: 3}
+  m_Name: Move 3
+  m_EditorClassIdentifier: 
+  value: 3
+  targetType: 1
+  maxNumberOfTargets: 1
+  effectText: Move 3 hexes

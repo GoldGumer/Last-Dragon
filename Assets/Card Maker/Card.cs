@@ -5,22 +5,59 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    [SerializeField] private string name;
-    [SerializeField] private Effect effect;
+    [SerializeField] private string combatName;
+    [SerializeField] private Effect combatEffect;
+
+    [SerializeField] private string overworldName;
+    [SerializeField] private Effect overworldEffect;
+
+    [SerializeField] private bool isShowingAttackSide = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (name != "")
+        if (isShowingAttackSide)
         {
-            transform.Find("Name").GetComponent<TextMeshProUGUI>().text = name;
+            if (combatName != "")
+            {
+                transform.Find("Name").GetComponent<TextMeshProUGUI>().text = combatName;
+            }
+            transform.Find("Effect").GetComponent<TextMeshProUGUI>().text = combatEffect.GetEffectText();
         }
-        transform.Find("Effect").GetComponent<TextMeshProUGUI>().text = effect.GetEffectText();
+        else
+        {
+            if (overworldName != "")
+            {
+                transform.Find("Name").GetComponent<TextMeshProUGUI>().text = overworldName;
+            }
+            transform.Find("Effect").GetComponent<TextMeshProUGUI>().text = overworldEffect.GetEffectText();
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isShowingAttackSide)
+        {
+            if (combatName != "")
+            {
+                transform.Find("Name").GetComponent<TextMeshProUGUI>().text = combatName;
+            }
+            transform.Find("Effect").GetComponent<TextMeshProUGUI>().text = combatEffect.GetEffectText();
+        }
+        else
+        {
+            if (overworldName != "")
+            {
+                transform.Find("Name").GetComponent<TextMeshProUGUI>().text = overworldName;
+            }
+            transform.Find("Effect").GetComponent<TextMeshProUGUI>().text = overworldEffect.GetEffectText();
+        }
+    }
 
+    public void FlipCard()
+    {
+        isShowingAttackSide = !isShowingAttackSide;
     }
 }

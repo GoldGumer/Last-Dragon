@@ -6,8 +6,8 @@ public abstract class Effect : ScriptableObject
 {
     protected enum targetTypes
     {
-        ally,
-        enemy
+        enemy,
+        ally
     }
 
     [SerializeField] protected int value;

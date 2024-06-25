@@ -96,9 +96,25 @@ PrefabInstance:
       propertyPath: effect
       value: 
       objectReference: {fileID: 11400000, guid: 71bb3b3c0d5130843b8df122c94d6a5a, type: 2}
+    - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: combatName
+      value: Bite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: combatEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: 71bb3b3c0d5130843b8df122c94d6a5a, type: 2}
+    - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: overworldName
+      value: Sprint
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: overworldEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: b3783ed0117836942a98cf9081d33b9e, type: 2}
     - target: {fileID: 8276048497190532966, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
       propertyPath: m_Name
-      value: Card Damage 2 to 1
+      value: Bite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

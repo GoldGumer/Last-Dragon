@@ -490,7 +490,7 @@ MonoBehaviour:
   m_text: A Dragon's Revenge
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
-  m_sharedMaterial: {fileID: -148937434873386476, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
+  m_sharedMaterial: {fileID: 8105819189990391171, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -773,7 +773,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
-  m_sharedMaterial: {fileID: -148937434873386476, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
+  m_sharedMaterial: {fileID: 8105819189990391171, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -909,7 +909,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
-  m_sharedMaterial: {fileID: -148937434873386476, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
+  m_sharedMaterial: {fileID: 8105819189990391171, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

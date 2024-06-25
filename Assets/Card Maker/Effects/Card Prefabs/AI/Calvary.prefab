@@ -96,6 +96,14 @@ PrefabInstance:
       propertyPath: effect
       value: 
       objectReference: {fileID: 11400000, guid: 2aa513021068ab04c876785737202b18, type: 2}
+    - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: combatEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: 2aa513021068ab04c876785737202b18, type: 2}
+    - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: isShowingAttackSide
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8276048497190532966, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
       propertyPath: m_Name
       value: Calvary

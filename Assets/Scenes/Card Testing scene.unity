@@ -313,6 +313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cure
       objectReference: {fileID: 0}
+    - target: {fileID: 6605668712808573517, guid: 912b1b2351d629b4d9d51ad2162ebeea, type: 3}
+      propertyPath: combatEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: ed584d14719da2e43a13deebac12b1ea, type: 2}
     - target: {fileID: 6658821666569463409, guid: 912b1b2351d629b4d9d51ad2162ebeea, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

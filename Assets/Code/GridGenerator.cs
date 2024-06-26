@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class GridGenerator : MonoBehaviour
 {
@@ -10,11 +11,12 @@ public class GridGenerator : MonoBehaviour
 
     [Header("Hex Generation")]
     [Space(10)]
-    [SerializeField] GameObject hexPrefab;
+    [SerializeField] private GameObject hexPrefab;
+    [SerializeField] private int hexesHorizontal;
+    [SerializeField] private int hexesVertical;
 
     [Header("Biome Generation Points")]
     [Space(10)]
-    //Biome genertion points
     [SerializeField] private float seperationBetweenPoints;
     [SerializeField] private float seperationRandomness;
     private GameObject[,] biomePoints = new GameObject[6,10];
@@ -22,11 +24,21 @@ public class GridGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 8; i++)
+        //Hex grid generation
+        Vector2 canvasResolution = canvas.GetComponent<CanvasScaler>().referenceResolution;
+        for (int i = 0; i < hexesVertical; i++)
         {
-            for(int j = 0; j < 8; j++)
+            for (int j = 0; j < hexesHorizontal; j++)
             {
-                Instantiate(hexPrefab, new Vector3(j * 1.5f, i * 1.886f, 0.0f), Quaternion.identity, canvas);
+                float yOffset = ((hexPrefab.GetComponent<RectTransform>().rect.height / 2) - (canvasResolution.y / 2));
+                float xOffset = ((hexPrefab.GetComponent<RectTransform>().rect.width / 2) - (canvasResolution.x / 2));
+                GameObject hexASCII = Instantiate(hexPrefab, Vector3.zero, Quaternion.identity, canvas);
+                hexASCII.transform.localPosition = new Vector3(
+                    j * (canvasResolution.x / hexesHorizontal) + xOffset,
+                    i * (canvasResolution.y / hexesVertical) + (canvasResolution.y / (hexesVertical * 2) * (j % 2)) + yOffset,
+                    0.0f);
+
+
             }
         }
         
@@ -48,6 +60,26 @@ public class GridGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 canvasResolution = canvas.GetComponent<CanvasScaler>().referenceResolution;
+        for (int i = 0; i < hexesVertical; i++)
+        {
+            for (int j = 0; j < hexesHorizontal; j++)
+            {
+                float yOffset = ((hexPrefab.GetComponent<RectTransform>().rect.height / 2) - (canvasResolution.y / 2));
+                float xOffset = ((hexPrefab.GetComponent<RectTransform>().rect.width / 2) - (canvasResolution.x / 2));
+                if ((j + i * hexesVertical) < canvas.childCount)
+                {
+                    Transform hexASCII = canvas.GetChild((j + i * hexesVertical));
+                    hexASCII.localPosition = new Vector3(
+                        j * (canvasResolution.x / hexesHorizontal) + xOffset,
+                        i * (canvasResolution.y / hexesVertical) + (canvasResolution.y / (hexesVertical * 2) * (j % 2)) + yOffset,
+                        0.0f);
+                }
+                else
+                {
 
+                }
+            }
+        }
     }
 }

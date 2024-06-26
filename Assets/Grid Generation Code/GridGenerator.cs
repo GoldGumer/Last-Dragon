@@ -61,6 +61,7 @@ public class GridGenerator : MonoBehaviour
             for (int j = 0; j <= horizontalBiomePoints; j++) 
             {
                 GameObject biomePoint = new GameObject("generation point" + (j + (i * horizontalBiomePoints)).ToString());
+                biomePoint.AddComponent<BiomePoint>().Setup(new Vector2Int(j, i));
                 biomePoint.transform.parent = biomePointsContainer;
                 biomePoint.transform.localPosition = new Vector3(
                     j * (canvasResolution.x / horizontalBiomePoints) - canvasHalfResolution.x,

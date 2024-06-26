@@ -70,7 +70,7 @@ public class Card : MonoBehaviour
         isShowingAttackSide = !isShowingAttackSide;
     }
 
-    private void OnMouseDown()
+    public void CardPressed()
     {
         if (!hasBeenPlayed)
         {

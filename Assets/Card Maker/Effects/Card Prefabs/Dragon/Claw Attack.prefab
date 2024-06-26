@@ -96,6 +96,22 @@ PrefabInstance:
       propertyPath: effect
       value: 
       objectReference: {fileID: 11400000, guid: fd3749022a57cf04f82d5c321c9e56b3, type: 2}
+    - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: combatName
+      value: Claw Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: combatEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: fd3749022a57cf04f82d5c321c9e56b3, type: 2}
+    - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: overworldName
+      value: Fly
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: overworldEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: 3fcda43570549c44aac648ad13824ce8, type: 2}
     - target: {fileID: 8276048497190532966, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
       propertyPath: m_Name
       value: Claw Attack

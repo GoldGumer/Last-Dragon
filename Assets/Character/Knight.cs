@@ -13,11 +13,13 @@ public class Knight : MonoBehaviour
     public bool TakeDamage(int damage)
     {
         currentHealth -= damage;
+        enemyHealth.value = currentHealth;
         if (currentHealth <= 0)
         {
             return true;
         }
         else
             return false;
+        
     }
 }

@@ -20,5 +20,10 @@ public abstract class Effect : ScriptableObject
         return effectText;
     }
 
+    public int GetCardValue()
+    {
+        return value;
+    }
+
     public abstract void DoEffect();
 }

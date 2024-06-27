@@ -15,6 +15,7 @@ public class Card : MonoBehaviour
     public bool hasBeenPlayed;
 
     private GameManager gm;
+    [SerializeField] private BattleSystem battleSystem;
 
     public int handIndex;
 
@@ -82,5 +83,10 @@ public class Card : MonoBehaviour
     {
         gm.discardPile.Add(this);
         gameObject.SetActive(false);
+    }
+
+    public GameObject GetCardRef()
+    {
+        return this.gameObject;
     }
 }

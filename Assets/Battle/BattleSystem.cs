@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.PlasticSCM.Editor.WebApi;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
@@ -16,7 +17,7 @@ public class BattleSystem : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject playerPrefab;
 
-    public TextMeshProUGUI textUI;
+    [SerializeField] private TextMeshProUGUI textUI;
 
     public Card cardRef;
 
@@ -27,7 +28,8 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD enemyHUD;
 
 
-    [SerializeField] private DamageEffect damage;
+    private DamageEffect damage;
+    [SerializeField] private GameManager gm;
 
     Dragon playerD;
     Knight enemyK;
@@ -35,8 +37,14 @@ public class BattleSystem : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
-        textUI.SetText("Start Combat");
+        textUI.text = ("Start Combat");
+       
         StartCoroutine(SetupBattle());
+    }
+
+    public Card GetCardRef()
+    {
+        return cardRef;
     }
 
    IEnumerator  SetupBattle()
@@ -46,43 +54,43 @@ public class BattleSystem : MonoBehaviour
         
         GameObject enemyGO = Instantiate(enemyPrefab, enemySpawn);
         enemyK = enemyGO.GetComponent<Knight>();
+        enemyK.enemyHealth = enemyHUD.enemyHealth;
 
         playerHUD.SetupDragon(playerD);
         enemyHUD.SetupEnemy(enemyK);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
-        state = BattleState.PLAYERTURN;
-        StatusTurn();
+        state = BattleState.STATUS;
+        StartCoroutine(StatusTurn());
     }
 
-    void StatusTurn()
+    IEnumerator StatusTurn()
     {
         //check for status effects here
 
         textUI.text = "Checking for Statuses";
 
-        PlayerTurn();
+       
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(PlayerTurn());
     }
 
     IEnumerator PlayerAttack()
     {
-        //Damage Enemy
-        bool isDead = enemyK.TakeDamage(damage.damageDealt);
-        enemyHUD.UpdateEnemyHP(enemyK.currentHealth);
-
-        textUI.text = "Performing: " + cardRef.name;
-
-        yield return new WaitForSeconds(2f);
-
-        //check if enemy is dead
-        if (isDead)
+        GameObject knight = GameObject.FindGameObjectWithTag("Knight");
+        
+        if (cardRef.hasBeenPlayed)
         {
-            //End Battle
-            state = BattleState.WON;
-            EndBattle();
+            int cardValue = damage.damageDealt;
+            if (knight)
+            {
+                knight.GetComponent<Knight>().TakeDamage(cardValue);
+            }
         }
-            //continue playing until player has hit end phase
+       
+        textUI.text = "Enemy Hit";
+        yield return new WaitForSeconds(2f);
     }
     public void EndPlayerTurn()
     {
@@ -90,25 +98,18 @@ public class BattleSystem : MonoBehaviour
         textUI.text = "Enemies Turn";
         StartCoroutine(EnemyTurn());
     }
-    void PlayerTurn()
+    IEnumerator PlayerTurn()
     {
         textUI.text = "Player's Turn";
-    }
-    IEnumerator PlayerHeal()
-    {
-        playerD.Heal(5);
+        state = BattleState.PLAYERTURN;
 
-        playerHUD.UpdatePlayerHP(playerD.currentHP);
-
+        int playerHand = 4;
+        for (int i = 0; i < playerHand; i++)
+        {
+            gm.DrawCard();
+        }
+       // StartCoroutine(PlayerAttack());
         yield return new WaitForSeconds(1f);
-    }
-    IEnumerator PlayerShield()
-    {
-        playerD.Shield(3);
-
-        playerHUD.UpdateShield(playerD.currentShield);
-
-        yield return new WaitForSeconds (1f);
     }
 
     public void OnAttackButton()
@@ -119,38 +120,22 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(PlayerAttack());
     }
 
-    public void OnHealButton()
-    {
-        if (state != BattleState.PLAYERTURN)
-            return;
-
-        StartCoroutine(PlayerHeal());
-    }
-    public void ShieldButton()
-    {
-        if (state != BattleState.PLAYERTURN)
-            return;
-
-        StartCoroutine(PlayerShield());
-    }
-
     IEnumerator EnemyTurn()
     {
         //Norbert AI Goes here
         textUI.text = "Enemies Attacking";
 
-        yield return new WaitForSeconds(2f);
-        bool isPlayerDead;
+       
+        //bool isPlayerDead;
         //isPlayerDead = playerD.TakeDamage(enemyK CARD HERE) 
 
         playerHUD.UpdatePlayerHP(playerD.currentHP);
 
-        yield return new WaitForSeconds(1f);
 
          /*(if (isPlayerDead)
         {
             state = BattleState.LOST
-            EndBattle();
+            StartCoroutine(EndBattle());
         }
          else 
          {
@@ -158,20 +143,24 @@ public class BattleSystem : MonoBehaviour
             StatusTurn();
          }
           */
+         yield return new WaitForSeconds(3f);
+        StartCoroutine(PlayerTurn());
          
     }
 
-    void EndBattle()
+    IEnumerator EndBattle()
     {
         if (state == BattleState.WON)
         {
             textUI.text = "Vengenance not complete";
-            Invoke("LoadOverWorld", 2f);
+            yield return new WaitForSeconds(2f);
+            LoadOverWorld();
         } else if (state == BattleState.LOST)
         {
             textUI.color = Color.red;
             textUI.text = "Dragons are Extinct";
-            Invoke("LoadMainMenu", 3f);
+            yield return new WaitForSeconds(3f);
+            LoadMainMenu();
         }
     }
 

@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 788713548569112414, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8105819189990391171, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
     - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
       propertyPath: name
       value: Bite
@@ -120,6 +124,30 @@ PrefabInstance:
       propertyPath: overworldEffect
       value: 
       objectReference: {fileID: 11400000, guid: c3e1f32ebde0007498059d610843c16f, type: 2}
+    - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: isShowingAttackSide
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919491409739582425, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8105819189990391171, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
+    - target: {fileID: 5143017420906455421, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CardAttacks
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143017420906455421, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DamageTest, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143017420906455421, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248558477530334557, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8105819189990391171, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
     - target: {fileID: 8276048497190532966, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
       propertyPath: m_Name
       value: Bite

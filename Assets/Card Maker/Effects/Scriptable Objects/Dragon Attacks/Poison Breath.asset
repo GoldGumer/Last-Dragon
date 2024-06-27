@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffff6f6050335804092187a235f61005, type: 3}
   m_Name: Poison Breath
   m_EditorClassIdentifier: Assembly-CSharp::PoisonEffect
-  value: 0
+  value: 2
   targetType: 0
-  maxNumberOfTargets: 0
-  effectText: 
+  maxNumberOfTargets: 4
+  effectText: Encompass enemies in Poison (2 damage on round start)

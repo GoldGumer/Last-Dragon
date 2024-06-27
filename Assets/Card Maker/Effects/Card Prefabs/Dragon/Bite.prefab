@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 764579758788356784, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
       propertyPath: name
       value: Bite
@@ -96,6 +100,10 @@ PrefabInstance:
       propertyPath: effect
       value: 
       objectReference: {fileID: 11400000, guid: 71bb3b3c0d5130843b8df122c94d6a5a, type: 2}
+    - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: cardType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
       propertyPath: combatName
       value: Bite

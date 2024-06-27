@@ -12,10 +12,16 @@ public class Card : MonoBehaviour
     [SerializeField] private Effect overworldEffect;
 
     [SerializeField] private bool isShowingAttackSide = true;
+    public bool hasBeenPlayed;
+
+    private GameManager gm;
+
+    public int handIndex;
 
     // Start is called before the first frame update
     void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         if (isShowingAttackSide)
         {
             if (combatName != "")
@@ -59,5 +65,22 @@ public class Card : MonoBehaviour
     public void FlipCard()
     {
         isShowingAttackSide = !isShowingAttackSide;
+    }
+
+    public void CardPressed()
+    {
+        if (!hasBeenPlayed)
+        {
+            transform.position += Vector3.up * 5; //shows card has been played
+            hasBeenPlayed = true;
+            gm.avilableSlots[handIndex] = true; //reopens the card slot to draw the next card into that slot
+            Invoke("MoveToDiscardPile", 2f);
+        }
+    }
+
+    void MoveToDiscardPile()
+    {
+        gm.discardPile.Add(this);
+        gameObject.SetActive(false);
     }
 }

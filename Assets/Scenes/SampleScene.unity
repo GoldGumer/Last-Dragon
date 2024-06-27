@@ -618,6 +618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c210022b3eb2507499155add695e6d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: 3
+  overworldPosition: {x: 1, y: 7, z: -8}
 --- !u!1 &1986576995
 GameObject:
   m_ObjectHideFlags: 0

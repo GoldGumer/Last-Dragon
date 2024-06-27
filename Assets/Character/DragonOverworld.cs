@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class DragonOverworld : MonoBehaviour
 {
-    private int movement = 3;
-    private Vector3Int overworldPosition = new Vector3Int(4, 4, 3);
+    [SerializeField] private int movement = 3;
+    [SerializeField] private Vector3Int overworldPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -38,5 +38,10 @@ public class DragonOverworld : MonoBehaviour
     public Vector3Int GetOverworldPosition()
     {
         return overworldPosition;
+    }
+
+    public void SetOverworldPosition(Vector3Int vector3Int)
+    {
+        overworldPosition = vector3Int;
     }
 }

@@ -16,7 +16,7 @@ public class DamageEffect : Effect
         {
             knight.GetComponent<Knight>().TakeDamage(-value);
         }
-        enemyHealth.SetHealth(-value);
+        
     }
 
 }

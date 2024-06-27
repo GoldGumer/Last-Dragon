@@ -16,7 +16,7 @@ public class TitleColourchange : MonoBehaviour
     public void PlayGame()
     {
         
-        SceneManager.LoadScene("GamePlaceHolder");
+        SceneManager.LoadScene("HexGrid");
     }
 
     void NextScreen()

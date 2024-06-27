@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab1de6f4e6d46634785f216c965319d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 99948c9da74741047a4d0f3246e6c811, type: 3}
   m_Name: Claw Attack
   m_EditorClassIdentifier: 
-  value: 1
-  targetType: 1
+  value: 4
   maxNumberOfTargets: 1
   effectText: Deal 1 Damage to an enemy (chance of multi-hit)

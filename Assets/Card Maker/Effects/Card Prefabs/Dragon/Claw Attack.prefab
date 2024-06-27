@@ -107,7 +107,7 @@ PrefabInstance:
     - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
       propertyPath: combatEffect
       value: 
-      objectReference: {fileID: 11400000, guid: fd3749022a57cf04f82d5c321c9e56b3, type: 2}
+      objectReference: {fileID: 11400000, guid: fe46a20fd0ca2f24687962990ffcff42, type: 2}
     - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
       propertyPath: overworldName
       value: Fly

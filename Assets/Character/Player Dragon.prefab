@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -3550975991080539214}
   m_Layer: 5
   m_Name: Player Dragon
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,5 +153,5 @@ MonoBehaviour:
   currentHP: 20
   currentShield: 0
   maxShield: 5
-  maxMana: 0
-  currentMana: 0
+  maxMana: 1
+  currentMana: 1

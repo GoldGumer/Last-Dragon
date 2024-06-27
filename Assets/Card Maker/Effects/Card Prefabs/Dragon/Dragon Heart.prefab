@@ -107,7 +107,7 @@ PrefabInstance:
     - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
       propertyPath: combatEffect
       value: 
-      objectReference: {fileID: 11400000, guid: 6c3b40c1365dccc44a1cb9a18090ed36, type: 2}
+      objectReference: {fileID: 11400000, guid: 6273945e17b0c6e43a44278d35dadad9, type: 2}
     - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
       propertyPath: overworldName
       value: Sprint

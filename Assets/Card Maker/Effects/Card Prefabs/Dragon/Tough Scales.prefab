@@ -107,7 +107,7 @@ PrefabInstance:
     - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
       propertyPath: combatEffect
       value: 
-      objectReference: {fileID: 11400000, guid: b4f3fdc34c852d84192e82cdf028ef1d, type: 2}
+      objectReference: {fileID: 11400000, guid: 5081663b409852744b34bbab2efa3b4f, type: 2}
     - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
       propertyPath: overworldName
       value: Jump

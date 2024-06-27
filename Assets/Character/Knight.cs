@@ -5,8 +5,15 @@ using UnityEngine.UI;
 
 public class Knight : MonoBehaviour
 {
+    public enum Status
+    {
+        None,
+        Poisoned
+    }
+
     public int maxHealth = 5;
     public int currentHealth;
+    private Status status = 0;
 
     public Slider enemyHealth;
 
@@ -21,5 +28,25 @@ public class Knight : MonoBehaviour
         else
             return false;
         
+    }
+
+    public void ApplyStatus(Status status)
+    {
+        this.status = status;
+    }
+
+    public void DoStatusEffect()
+    {
+        switch (status)
+        {
+            case Status.Poisoned:
+                if (TakeDamage(2))
+                {
+                    GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().EndTheBattle();
+                }
+                break;
+            default:
+                break;
+        }
     }
 }

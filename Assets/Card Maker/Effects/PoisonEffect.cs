@@ -7,6 +7,12 @@ public class PoisonEffect : Effect
 {
     public override void DoEffect()
     {
-        
+        GameObject knight = GameObject.FindGameObjectWithTag("Knight");
+
+        if (knight)
+        {
+            knight.GetComponent<Knight>().ApplyStatus(Knight.Status.Poisoned);
+        }
+
     }
 }

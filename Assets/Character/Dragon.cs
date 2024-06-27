@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Dragon : MonoBehaviour
 {
@@ -14,13 +15,27 @@ public class Dragon : MonoBehaviour
 
     public bool TakeDamage(int damage)
     {
-        currentHP -= damage;
+        if (currentShield >= 0 && (damage - currentShield) >= 0)
+        {
+            damage -= currentShield;
+            Shield(-currentShield);
+            currentHP -= damage;
+        }
+        else if (currentShield > 0 && (currentShield - damage) > 0)
+        {
+            Shield(-damage);
+        }
+
+        GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().playerHUD.UpdatePlayerHP(currentHP);
+        
         if (currentHP <= 0)
         {
             return true;
         }
         else
+        {
             return false;
+        }
     }
 
     public void Heal(int amount)
@@ -33,6 +48,8 @@ public class Dragon : MonoBehaviour
         {
             currentHP = maxHP;
         }
+
+        GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().playerHUD.UpdatePlayerHP(currentHP);
     }
     public void Shield(int amount)
     {
@@ -41,5 +58,24 @@ public class Dragon : MonoBehaviour
         {
             currentShield = maxShield;
         }
+
+        GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().playerHUD.UpdateShield(currentShield);
+    }
+
+    public int GetCurrentMana()
+    {
+        return currentMana;
+    }
+
+    public void LowerCurrentMana()
+    {
+        currentMana--;
+        GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().playerHUD.UpdatePlayerMP(currentMana);
+    }
+
+    public void ResetCurrentMana()
+    {
+        currentMana = maxMana;
+        GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().playerHUD.UpdatePlayerMP(currentMana);
     }
 }

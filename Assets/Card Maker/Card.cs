@@ -71,13 +71,14 @@ public class Card : MonoBehaviour
 
     public void CardPressed()
     {
-        if (!hasBeenPlayed)
+        if (!hasBeenPlayed && GameObject.FindGameObjectWithTag("Player").GetComponent<Dragon>().GetCurrentMana() > 0)
         {
             transform.position += Vector3.up * 5; //shows card has been played
             hasBeenPlayed = true;
             combatEffect.DoEffect();
             gm.avilableSlots[handIndex] = true; //reopens the card slot to draw the next card into that slot
             Invoke("MoveToDiscardPile", 2f);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Dragon>().LowerCurrentMana();
         }
     }
 

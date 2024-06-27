@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
         {
             Card randCard = deck[Random.Range(0,deck.Count)];
 
+            Debug.Log(randCard);
+
             for (int i = 0; i < avilableSlots.Length; i++)
             {
                 if (avilableSlots[i])
@@ -33,6 +35,11 @@ public class GameManager : MonoBehaviour
                     break; //so it only draws one card at a time
                 }
             }
+        }
+        else
+        {
+            deck = discardPile;
+            discardPile.Clear();
         }
     }
     /* public void ShowCurrentDeck()

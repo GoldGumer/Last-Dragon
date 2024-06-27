@@ -4,14 +4,7 @@ using UnityEngine;
 
 public abstract class Effect : ScriptableObject
 {
-    protected enum targetTypes
-    {
-        enemy,
-        ally
-    }
-
     [SerializeField] protected int value;
-    [SerializeField] protected targetTypes targetType;
     [SerializeField] protected int maxNumberOfTargets;
     [SerializeField] protected string effectText;
 

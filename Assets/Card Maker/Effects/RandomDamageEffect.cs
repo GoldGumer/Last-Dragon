@@ -1,23 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DamageEffect", menuName = "CardEffects/DamageEffect", order = 2)]
-public class DamageEffect : Effect
+[CreateAssetMenu(fileName = "RandomDamageEffect", menuName = "CardEffects/RandomDamageEffect", order = 4)]
+public class RandomDamageEffect : Effect
 {
     public override void DoEffect()
     {
         GameObject knight = GameObject.FindGameObjectWithTag("Knight");
-        
+
         if (knight)
         {
-            if (knight.GetComponent<Knight>().TakeDamage(value))
+            if (knight.GetComponent<Knight>().TakeDamage(Random.Range(1,(value + 1))))
             {
                 GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().EndTheBattle();
             }
         }
-        
     }
-
 }

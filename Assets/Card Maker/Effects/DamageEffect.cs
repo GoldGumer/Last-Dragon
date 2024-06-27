@@ -7,16 +7,16 @@ using UnityEngine;
 public class DamageEffect : Effect
 {
     public EnemyHealth enemyHealth;
-    public Effect cardValue;
+    
     public int damageDealt;
     public override void DoEffect()
     {
+        GameObject knight = GameObject.FindGameObjectWithTag("Knight");
+        if (knight)
+        {
+            knight.GetComponent<Knight>().TakeDamage(-value);
+        }
         enemyHealth.SetHealth(-value);
     }
 
-    public int DealDamage()
-    {
-        damageDealt = cardValue.GetCardValue();
-        return damageDealt;
-    }
 }

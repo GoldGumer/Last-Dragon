@@ -759,7 +759,6 @@ GameObject:
   - component: {fileID: 294137464}
   - component: {fileID: 294137463}
   - component: {fileID: 294137462}
-  - component: {fileID: 294137461}
   m_Layer: 5
   m_Name: DamageTest
   m_TagString: Untagged
@@ -787,28 +786,6 @@ RectTransform:
   m_AnchoredPosition: {x: 35, y: 349}
   m_SizeDelta: {x: 233.0715, y: 54.1128}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &294137461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294137459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 008206e9802f93747b6d9b53688ffce2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
-  enemyPrefab: {fileID: 1563162303462001507, guid: 5042923b7446b184d9dea8e3333730e4, type: 3}
-  playerPrefab: {fileID: 7642811742663590310, guid: 714dbf05d8d189b4f9625a97525ddeef, type: 3}
-  textUI: {fileID: 1516200379}
-  cardRef: {fileID: 0}
-  enemySpawn: {fileID: 9132990538930896685}
-  playerSpawn: {fileID: 1405904842}
-  playerHUD: {fileID: 1133901890}
-  enemyHUD: {fileID: 544004201}
-  gm: {fileID: 1317960963}
 --- !u!114 &294137462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -852,7 +829,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 294137463}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1956513201}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: OnAttackButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &294137463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1314,7 +1303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 317}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &544004201
@@ -1962,6 +1951,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4182126560226174545, guid: cf304a95b44cada4cb96333839b3d4a7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182126560226174545, guid: cf304a95b44cada4cb96333839b3d4a7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 4718197081810354652, guid: cf304a95b44cada4cb96333839b3d4a7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2269,7 +2266,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -596, y: -218}
+  m_AnchoredPosition: {x: -596, y: 99}
   m_SizeDelta: {x: 100, y: 31.0022}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1435334502 stripped
@@ -2512,7 +2509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1132204184694395592, guid: e0454c7c5da036f469eebfffb800fa3e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 325
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1132204184694395592, guid: e0454c7c5da036f469eebfffb800fa3e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2547,7 +2544,7 @@ GameObject:
   - component: {fileID: 1740562967}
   - component: {fileID: 1740562966}
   - component: {fileID: 1740562965}
-  - component: {fileID: 1740562964}
+  - component: {fileID: 1740562968}
   m_Layer: 5
   m_Name: 'EndTurn '
   m_TagString: Untagged
@@ -2575,28 +2572,6 @@ RectTransform:
   m_AnchoredPosition: {x: 38.8685, y: 433.0564}
   m_SizeDelta: {x: 158.3369, y: 54.1128}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1740562964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740562962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 008206e9802f93747b6d9b53688ffce2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
-  enemyPrefab: {fileID: 1563162303462001507, guid: 5042923b7446b184d9dea8e3333730e4, type: 3}
-  playerPrefab: {fileID: 7642811742663590310, guid: 714dbf05d8d189b4f9625a97525ddeef, type: 3}
-  textUI: {fileID: 1516200379}
-  cardRef: {fileID: 0}
-  enemySpawn: {fileID: 9132990538930896685}
-  playerSpawn: {fileID: 1405904842}
-  playerHUD: {fileID: 1133901890}
-  enemyHUD: {fileID: 544004201}
-  gm: {fileID: 1317960963}
 --- !u!114 &1740562965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2641,7 +2616,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1740562964}
+      - m_Target: {fileID: 1956513201}
         m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
         m_MethodName: EndPlayerTurn
         m_Mode: 1
@@ -2691,6 +2666,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740562962}
   m_CullTransparentMesh: 1
+--- !u!114 &1740562968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740562962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f19fd8f473af34c9f4179c5ce7d196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1762260826 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6920083465953251153, guid: cf304a95b44cada4cb96333839b3d4a7, type: 3}
@@ -2790,6 +2777,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af172a4239cbb70418d525ea20a745af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1956513201 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1476301244445554596, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
+  m_PrefabInstance: {fileID: 1487304204840997842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008206e9802f93747b6d9b53688ffce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &1997672442 stripped
@@ -3259,7 +3257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 161.2, y: -329.7}
+  m_AnchoredPosition: {x: 161.2, y: -12.700012}
   m_SizeDelta: {x: 100, y: 19.3773}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807

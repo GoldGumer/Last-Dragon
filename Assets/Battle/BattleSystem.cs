@@ -54,6 +54,7 @@ public class BattleSystem : MonoBehaviour
         
         GameObject enemyGO = Instantiate(enemyPrefab, enemySpawn);
         enemyK = enemyGO.GetComponent<Knight>();
+        enemyK.enemyHealth = enemyHUD.enemyHealth;
 
         playerHUD.SetupDragon(playerD);
         enemyHUD.SetupEnemy(enemyK);
@@ -77,11 +78,19 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerAttack()
     {
-
+        GameObject knight = GameObject.FindGameObjectWithTag("Knight");
+        
+        if (cardRef.hasBeenPlayed)
+        {
+            int cardValue = damage.damageDealt;
+            if (knight)
+            {
+                knight.GetComponent<Knight>().TakeDamage(cardValue);
+            }
+        }
+       
         textUI.text = "Enemy Hit";
         yield return new WaitForSeconds(2f);
-        
-
     }
     public void EndPlayerTurn()
     {

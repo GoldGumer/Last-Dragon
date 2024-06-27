@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DamageTest : MonoBehaviour
 {
-    /*bool isDead;
+   /* bool isDead;
  if (cardRef.hasBeenPlayed)
  {
      textUI.text = "Performing: " + cardRef.name;
@@ -17,6 +17,5 @@ public class DamageTest : MonoBehaviour
          //End Battle
          state = BattleState.WON;
         StartCoroutine(EndBattle());
-     } 
- }*/
+     } */
 }

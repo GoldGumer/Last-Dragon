@@ -84,4 +84,9 @@ public class Card : MonoBehaviour
         gm.discardPile.Add(this);
         gameObject.SetActive(false);
     }
+
+    public GameObject GetCardRef()
+    {
+        return this.gameObject;
+    }
 }

@@ -15,15 +15,16 @@ public class Card : MonoBehaviour
     public bool hasBeenPlayed;
 
     private GameManager gm;
-    [SerializeField] private BattleSystem battleSystem;
+    private BattleSystem bs;
     
-
     public int handIndex;
 
     // Start is called before the first frame update
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
+        bs = FindObjectOfType<BattleSystem>();
+        
         if (isShowingAttackSide)
         {
             if (combatName != "")
@@ -76,6 +77,7 @@ public class Card : MonoBehaviour
             transform.position += Vector3.up * 5; //shows card has been played
             hasBeenPlayed = true;
             combatEffect.DoEffect();
+            bs.PlayEnemyHitSound();
             gm.avilableSlots[handIndex] = true; //reopens the card slot to draw the next card into that slot
             Invoke("MoveToDiscardPile", 2f);
             GameObject.FindGameObjectWithTag("Player").GetComponent<Dragon>().LowerCurrentMana();

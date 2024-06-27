@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GridGenerator : MonoBehaviour
 {
-    private enum biomeType
+    private enum BiomeType
     {
         plain,
         forest,
@@ -15,14 +15,14 @@ public class GridGenerator : MonoBehaviour
 
     struct biomePointPosition
     {
-        public biomePointPosition(biomeType biomeType, Vector2Int vector2Int, Vector2 vector2)
+        public biomePointPosition(BiomeType BiomeType, Vector2Int vector2Int, Vector2 vector2)
         {
-            type = biomeType;
+            type = BiomeType;
             overWorldPosition = vector2Int;
             offsetPosition = vector2;
         }
 
-        public biomeType type { get; }
+        public BiomeType type { get; }
         public Vector2Int overWorldPosition { get; }
         public Vector2 offsetPosition { get; }
     }
@@ -37,12 +37,6 @@ public class GridGenerator : MonoBehaviour
     private float hexesVertical = 7;
     [Range(0.0f,1.0f)]
     [SerializeField] private float canvasAreaMultiplier;
-
-    [Header("Biome Colours")]
-    [Space(10)]
-    [SerializeField] private Color plainsColour;
-    [SerializeField] private Color forestColour;
-    [SerializeField] private Color mountainColour;
 
     [Header("Biome Generation Points")]
     [Space(10)]
@@ -62,6 +56,7 @@ public class GridGenerator : MonoBehaviour
         //Biome point generator
         biomePoints = new GameObject[Mathf.RoundToInt(horizontalBiomePoints + 1.0f), Mathf.RoundToInt(verticalBiomePoints + 1.0f)];
 
+
         for (int i = 0; i <= verticalBiomePoints; i++)
         {
             for (int j = 0; j <= horizontalBiomePoints; j++)
@@ -78,17 +73,21 @@ public class GridGenerator : MonoBehaviour
                     );
 
                 storedBiomePoints.Add(
-                    new biomePointPosition((biomeType)Random.Range(0, 2),
+                    new biomePointPosition((BiomeType)Random.Range(0, 2),
                     new Vector2Int(j, i),
                     new Vector2(Random.Range(-(horizontalStep / 2), (horizontalStep / 2)), Random.Range(-(verticalStep / 2), (verticalStep / 2)))));
 
                 GameObject offsetPoint = new GameObject("Offset Point");
                 offsetPoint.transform.parent = biomePoints[j, i].transform;
                 offsetPoint.transform.localPosition = storedBiomePoints[storedBiomePoints.Count - 1].offsetPosition;
+                
             }
         }
 
         //Hex grid generation
+        Vector2Int cityCoord = new Vector2Int(Random.Range(3, 11), Random.Range(2, 7));
+
+
         hexesHorizontal += hexesHorizontal * canvasAreaMultiplier;
         hexesVertical += hexesVertical * canvasAreaMultiplier;
         for (int i = 0; i < hexesVertical; i++)
@@ -102,6 +101,12 @@ public class GridGenerator : MonoBehaviour
                     j * (canvasResolution.x / hexesHorizontal) + xOffset,
                     i * (canvasResolution.y / hexesVertical) + ((canvasResolution.y / (hexesVertical * 2)) * (j % 2)) + yOffset,
                     0.0f);
+                hexASCII.GetComponent<Hex>().SetOverworldPosition(new Vector3Int(Mathf.CeilToInt(j / 2.0f) + i - j, j, -Mathf.CeilToInt(j / 2.0f) -i));
+
+                if (cityCoord == new Vector2Int(j, i))
+                {
+                    hexASCII.GetComponent<Hex>().ChangeHexType(4);
+                }
             }
         }
 

@@ -1756,7 +1756,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2720,6 +2720,26 @@ PrefabInstance:
       propertyPath: playerSpawn
       value: 
       objectReference: {fileID: 1405904842}
+    - target: {fileID: 1598719408126503761, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643704245240941075, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805616254488738880, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943404433373727061, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192560623033344598, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3362926549369746789, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2758,6 +2778,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3362926549369746789, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379551690853907649, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797184329957171029, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878378938230157199, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306010741709718987, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7417309480295568701, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507521210749509783, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568452435826710795, guid: ee1646e6842ffd248a3997b8a129cb09, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

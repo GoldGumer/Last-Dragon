@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamePlaceHolder.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/HexGrid.unity
+    guid: b3269b32d4338194ab38eaa58e95d81b
+  - enabled: 1
+    path: Assets/Scenes/Combat.unity
+    guid: 3fcda37a6248ef54b895bdb835168f1f
   m_configObjects: {}

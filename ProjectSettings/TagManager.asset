@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Knight
   - Card
+  - BattleSystem
   layers:
   - Default
   - TransparentFX

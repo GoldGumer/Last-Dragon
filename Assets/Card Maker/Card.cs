@@ -16,6 +16,7 @@ public class Card : MonoBehaviour
 
     private GameManager gm;
     [SerializeField] private BattleSystem battleSystem;
+    
 
     public int handIndex;
 
@@ -74,6 +75,7 @@ public class Card : MonoBehaviour
         {
             transform.position += Vector3.up * 5; //shows card has been played
             hasBeenPlayed = true;
+            combatEffect.DoEffect();
             gm.avilableSlots[handIndex] = true; //reopens the card slot to draw the next card into that slot
             Invoke("MoveToDiscardPile", 2f);
         }

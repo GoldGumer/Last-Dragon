@@ -9,6 +9,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public enum BattleState {START,STATUS, PLAYERTURN, ENEMYTURN,WON, LOST }
 public class BattleSystem : MonoBehaviour
@@ -31,6 +32,8 @@ public class BattleSystem : MonoBehaviour
     private DamageEffect damage;
     [SerializeField] private GameManager gm;
 
+    bool isPlayerDead = false;
+   
     Dragon playerD;
     Knight enemyK;
     // Start is called before the first frame update
@@ -76,22 +79,6 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(PlayerTurn());
     }
 
-    IEnumerator PlayerAttack()
-    {
-        GameObject knight = GameObject.FindGameObjectWithTag("Knight");
-        
-        if (cardRef.hasBeenPlayed)
-        {
-            int cardValue = damage.damageDealt;
-            if (knight)
-            {
-                knight.GetComponent<Knight>().TakeDamage(cardValue);
-            }
-        }
-       
-        textUI.text = "Enemy Hit";
-        yield return new WaitForSeconds(2f);
-    }
     public void EndPlayerTurn()
     {
         state = BattleState.ENEMYTURN;
@@ -112,42 +99,32 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
     }
 
-    public void OnAttackButton()
-    {
-        if (state != BattleState.PLAYERTURN)
-            return;
-
-        StartCoroutine(PlayerAttack());
-    }
-
     IEnumerator EnemyTurn()
     {
+        int enemyDamage = Random.Range(1, 5);
         //Norbert AI Goes here
         textUI.text = "Enemies Attacking";
 
-       
-        //bool isPlayerDead;
-        //isPlayerDead = playerD.TakeDamage(enemyK CARD HERE) 
-
-        playerHUD.UpdatePlayerHP(playerD.currentHP);
-
-
-         /*(if (isPlayerDead)
+        yield return new WaitForSeconds(3f);
+        playerHUD.UpdatePlayerHP(playerD.currentHP -= enemyDamage);
+        if (playerD.currentHP <= 0)
         {
-            state = BattleState.LOST
+            isPlayerDead = true;
+        }
+
+        if (isPlayerDead)
+        {
+            state = BattleState.LOST;
             StartCoroutine(EndBattle());
         }
-         else 
-         {
-            state = BattleState.Status
-            StatusTurn();
-         }
-          */
-         yield return new WaitForSeconds(3f);
-        StartCoroutine(PlayerTurn());
-         
-    }
+        else
+        {
+            state = BattleState.STATUS;
+            StartCoroutine(StatusTurn());
+        }
 
+    }
+    
     IEnumerator EndBattle()
     {
         if (state == BattleState.WON)
@@ -164,9 +141,22 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    public void EndTheBattle()
+    {
+        if (enemyK.currentHealth <= 0)
+        {
+            state = BattleState.WON;
+        }
+        else if (isPlayerDead)
+        {
+            state = BattleState.LOST;
+        }
+        StartCoroutine(EndBattle());
+    }
+
     void LoadOverWorld()
     {
-        SceneManager.LoadScene("Overworld");
+        SceneManager.LoadScene("HexGrid");
     }
 
     void LoadMainMenu()

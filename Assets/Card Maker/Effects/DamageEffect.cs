@@ -6,15 +6,21 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DamageEffect", menuName = "CardEffects/DamageEffect", order = 2)]
 public class DamageEffect : Effect
 {
+    
     public EnemyHealth enemyHealth;
     
     public int damageDealt;
     public override void DoEffect()
     {
         GameObject knight = GameObject.FindGameObjectWithTag("Knight");
+        
         if (knight)
         {
-            knight.GetComponent<Knight>().TakeDamage(-value);
+            Debug.Log(value);
+            if (knight.GetComponent<Knight>().TakeDamage(value))
+            {
+                GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().EndTheBattle();
+            }
         }
         
     }

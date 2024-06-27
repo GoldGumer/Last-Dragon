@@ -32,6 +32,9 @@ public class BattleSystem : MonoBehaviour
     private DamageEffect damage;
     [SerializeField] private GameManager gm;
 
+    [SerializeField] private AudioSource[] enemiesHit;
+    [SerializeField] private AudioSource[] enemiesAttack;
+
     bool isPlayerDead = false;
    
     Dragon playerD;
@@ -43,6 +46,17 @@ public class BattleSystem : MonoBehaviour
         textUI.text = ("Start Combat");
        
         StartCoroutine(SetupBattle());
+    }
+
+    public void PlayEnemyHitSound()
+    {
+        AudioSource hitNoise = enemiesHit[Random.Range(0, enemiesHit.Length)];
+        hitNoise.Play();
+    }
+    public void EnemyAtackSound()
+    {
+        AudioSource Attacknoise = enemiesAttack[Random.Range(0, enemiesAttack.Length)];
+        Attacknoise.Play();
     }
 
     public Card GetCardRef()
@@ -104,7 +118,7 @@ public class BattleSystem : MonoBehaviour
         int enemyDamage = Random.Range(1, 5);
         //Norbert AI Goes here
         textUI.text = "Enemies Attacking";
-
+        EnemyAtackSound();
         yield return new WaitForSeconds(3f);
         playerHUD.UpdatePlayerHP(playerD.currentHP -= enemyDamage);
         if (playerD.currentHP <= 0)

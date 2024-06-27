@@ -68,7 +68,7 @@ MonoBehaviour:
   m_text: Text for effect
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
-  m_sharedMaterial: {fileID: -817372716127235147, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
+  m_sharedMaterial: {fileID: 8105819189990391171, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_text: Card Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
-  m_sharedMaterial: {fileID: -817372716127235147, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
+  m_sharedMaterial: {fileID: 8105819189990391171, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -422,7 +422,7 @@ MonoBehaviour:
     |________|'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
-  m_sharedMaterial: {fileID: -817372716127235147, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
+  m_sharedMaterial: {fileID: 8105819189990391171, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -548,7 +548,7 @@ MonoBehaviour:
   overworldEffect: {fileID: 0}
   isShowingAttackSide: 0
   hasBeenPlayed: 0
-  cardType: 0
+  battleSystem: {fileID: 0}
   handIndex: 0
 --- !u!61 &764579758788356784
 BoxCollider2D:

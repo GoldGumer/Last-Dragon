@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6973442318786726915}
   - component: {fileID: 1073068475616818683}
   - component: {fileID: 719048345960813057}
+  - component: {fileID: 8403420059046511632}
   m_Layer: 5
   m_Name: Knight 1
   m_TagString: Untagged
@@ -231,3 +232,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8403420059046511632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563162303462001507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c214b287d4ac3498c6dd9df2966616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 5
+  enemyHealth: {fileID: 0}

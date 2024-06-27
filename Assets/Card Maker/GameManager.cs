@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
                     randCard.transform.position = cardSlots[i].position;
                     avilableSlots[i] = false; //card can no longer occupy that slot if its there
                     deck.Remove(randCard);
-                    return; //so it only draws one card at a time
+                    break; //so it only draws one card at a time
                 }
             }
         }

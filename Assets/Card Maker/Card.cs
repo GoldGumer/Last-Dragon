@@ -15,6 +15,7 @@ public class Card : MonoBehaviour
     public bool hasBeenPlayed;
 
     private GameManager gm;
+    [SerializeField] private BattleSystem battleSystem;
 
     public int handIndex;
 

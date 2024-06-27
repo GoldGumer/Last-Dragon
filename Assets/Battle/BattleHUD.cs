@@ -13,11 +13,11 @@ public class BattleHUD : MonoBehaviour
 
     public void SetupDragon(Dragon player)
     {
-        playerHPtext.SetText(player.maxHP.ToString());
-        playerHPtext.SetText(player.currentHP.ToString());
+        playerHPtext.text = (player.maxHP.ToString());
+        playerHPtext.text = (player.currentHP.ToString());
 
          
-        playerShieldtext.SetText(player.currentShield.ToString());
+        playerShieldtext.text = (player.currentShield.ToString());
     }
     public void SetupEnemy(Knight enemy)
     {
@@ -37,6 +37,6 @@ public class BattleHUD : MonoBehaviour
         if (!playerShieldtext.IsActive()) {
             playerShieldtext.IsActive();
         }
-        playerShieldtext.SetText(shield.ToString());
+        playerShieldtext.text = (shield.ToString());
     }
 }

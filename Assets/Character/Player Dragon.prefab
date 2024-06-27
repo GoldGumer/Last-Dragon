@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1469370453467028458}
   - component: {fileID: 2117381875478182243}
   - component: {fileID: 6587962584643772828}
+  - component: {fileID: -3550975991080539214}
   m_Layer: 5
   m_Name: Player Dragon
   m_TagString: Untagged
@@ -136,3 +137,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &-3550975991080539214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642811742663590310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c3fd7613b0e6e49948889963e73fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 20
+  currentHP: 20
+  currentShield: 0
+  maxShield: 5
+  maxMana: 0
+  currentMana: 0

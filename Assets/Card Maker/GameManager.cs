@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public List<Card> deck = new List<Card>();
     public List<Card> discardPile = new List<Card>();
     public Transform[] cardSlots;
+    public Transform[] deckSlots;
+    public Transform[] discardPileSlots;
     public bool[] avilableSlots;
 
     public TextMeshProUGUI deckCountText;
@@ -33,6 +35,16 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    /* public void ShowCurrentDeck()
+    {
+        if (deck.Count >= 1)
+        { 
+            foreach (Card card in deck)
+            {
+               card.gameObject.SetActive(true);
+            }
+        }
+    } */
 
     private void Update()
     {

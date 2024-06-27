@@ -14,9 +14,6 @@ public class Card : MonoBehaviour
     [SerializeField] private bool isShowingAttackSide = true;
     public bool hasBeenPlayed;
 
-    [SerializeField] private CardType cardType;
-    
-    private GameObject _card;
     private GameManager gm;
 
     public int handIndex;
@@ -76,7 +73,7 @@ public class Card : MonoBehaviour
         {
             transform.position += Vector3.up * 5; //shows card has been played
             hasBeenPlayed = true;
-            gm.avilableSlots[handIndex] = true;
+            gm.avilableSlots[handIndex] = true; //reopens the card slot to draw the next card into that slot
             Invoke("MoveToDiscardPile", 2f);
         }
     }

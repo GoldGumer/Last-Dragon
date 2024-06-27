@@ -116,6 +116,10 @@ PrefabInstance:
       propertyPath: overworldEffect
       value: 
       objectReference: {fileID: 11400000, guid: b3783ed0117836942a98cf9081d33b9e, type: 2}
+    - target: {fileID: 1039490643601464535, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
+      propertyPath: isShowingAttackSide
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4919491409739582425, guid: 96786c0fe7093d54cbb9d9dedea64a34, type: 3}
       propertyPath: m_sharedMaterial
       value: 

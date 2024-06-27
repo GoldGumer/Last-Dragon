@@ -330,7 +330,7 @@ MonoBehaviour:
   m_text: Fight
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
-  m_sharedMaterial: {fileID: -148937434873386476, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
+  m_sharedMaterial: {fileID: 8105819189990391171, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -440,7 +440,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -626,7 +626,7 @@ MonoBehaviour:
     your power, let your fury loose."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
-  m_sharedMaterial: {fileID: -148937434873386476, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
+  m_sharedMaterial: {fileID: 8105819189990391171, guid: fe7759cfc64fee8448c1bc1c2389b1a9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

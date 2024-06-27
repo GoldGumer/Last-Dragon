@@ -102,6 +102,7 @@ public class GridGenerator : MonoBehaviour
                     j * (canvasResolution.x / hexesHorizontal) + xOffset,
                     i * (canvasResolution.y / hexesVertical) + ((canvasResolution.y / (hexesVertical * 2)) * (j % 2)) + yOffset,
                     0.0f);
+                hexASCII.GetComponent<Hex>().SetOverworldPosition(new Vector3Int(Mathf.FloorToInt((j + 1) / 2), i, Mathf.FloorToInt((j) / 2)));
             }
         }
 

@@ -52,11 +52,6 @@ public class BattleSystem : MonoBehaviour
         Attacknoise.Play();
     }
 
-    public Card GetCardRef()
-    {
-        return cardRef;
-    }
-
     public void EndPlayerTurn()
     {
         state = BattleState.ENEMYTURN;
